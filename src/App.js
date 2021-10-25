@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
 
-function App() {
+// Components
+import Timer from "./components/Timer";
+import Alert from "./components/Alert";
+import Form from "./components/Form";
+
+const App = () => {
+  const workTime = {
+    minutes: 10,
+    seconds: 15,
+  };
+  const restTime = {
+    minutes: 10,
+    seconds: 15,
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Timer workTime={workTime} restTime={restTime} />
+      <Form />
     </div>
   );
-}
+};
 
 export default App;
