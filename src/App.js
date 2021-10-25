@@ -1,9 +1,7 @@
 import React from "react";
-
 // Components
 import Timer from "./components/Timer";
-import Alert from "./components/Alert";
-import Form from "./components/Form";
+import FormBtn from "./components/FormBtn";
 
 const App = () => {
   const workTime = {
@@ -18,7 +16,7 @@ const App = () => {
   return (
     <div className="App">
       <Timer workTime={workTime} restTime={restTime} />
-      <Form />
+      <FormBtn />
     </div>
   );
 };

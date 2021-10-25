@@ -3,7 +3,6 @@ import { Row, Col, ProgressBar } from "react-bootstrap";
 
 const Timer = ({ workTime, restTime }) => {
   const [timeToWork, setTimeToWork] = useState(true);
-  let now = 2;
   const [minutes, setMinutes] = useState(workTime.minutes);
   const [seconds, setSeconds] = useState(workTime.seconds);
 
@@ -23,16 +22,13 @@ const Timer = ({ workTime, restTime }) => {
           setSeconds(59);
         }
       }
-    }, 1000);
+    }, 100000);
     return () => {
       clearInterval(myInterval);
     };
   });
   return (
     <div>
-      {/* <h1 style={{ display: "float" }}>
-        Pomodoro Clock | Boost your performance!
-      </h1> */}
       <Row xs={12} sm={12} md={12} lg={12} noGutters>
         {/* WORK TIME COLUMN */}
         <Col
@@ -55,7 +51,7 @@ const Timer = ({ workTime, restTime }) => {
             }
             min={0}
             max={workTime.minutes * 60 + workTime.seconds}
-            style={{ width: "100%", height: "10vh" }}
+            style={{ width: "100%", height: "10vh", borderRadius: "0px" }}
           />
           <div className="center-screen">
             <h2 className={!timeToWork && "dimmed-text"}>
@@ -92,7 +88,7 @@ const Timer = ({ workTime, restTime }) => {
             }
             min={0}
             max={restTime.minutes * 60 + restTime.seconds}
-            style={{ width: "100%", height: "10vh" }}
+            style={{ width: "100%", height: "10vh", borderRadius: "0px" }}
           />
           <div className="center-screen">
             <h2 className={timeToWork && "dimmed-text"}>
